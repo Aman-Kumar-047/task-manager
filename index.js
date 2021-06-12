@@ -9,7 +9,7 @@ const app = express();
 const port = 9004;
 app.use(cors());
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log('Server started on: ' + port);
     dao.connectDb();
 });
