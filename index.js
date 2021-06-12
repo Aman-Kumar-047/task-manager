@@ -14,6 +14,10 @@ app.listen(port, () => {
     dao.connectDb();
 });
 
+app.get('/healthcheck', function(req, res){
+     return res.status(200).json({ status: "OK" });
+});
+
 app.post('/login', function (req, res) {
     let body = '';
     req.on('data', chunk => {
